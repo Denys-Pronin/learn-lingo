@@ -8,7 +8,6 @@
 
 body {
   transition: background-color 0.3s, color 0.3s;
-  max-width: 1440px;
   background-color: var(--white);
   color: var(--main-text-color);
   position: relative;
@@ -54,4 +53,9 @@ body.peach-mode {
 
 html {
   scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
 }

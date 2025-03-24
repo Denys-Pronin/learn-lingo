@@ -1,0 +1,48 @@
+header {
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  gap: 8px;
+}
+.logo_text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.4px;
+}
+
+.list {
+  display: flex;
+  gap: 28px;
+}
+
+.nav_link {
+  line-height: 20px;
+}
+
+.login {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.login_icon {
+  stroke: var(--main-color);
+  fill: transparent;
+}
+
+.login_wrapper {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.login_text {
+  font-weight: 700;
+  line-height: 20px;
+}
