@@ -1,0 +1,57 @@
+@import "modern-normalize";
+@import url("./reset.css");
+@import url("./fonts.css");
+
+:root {
+  --white: #ffffff;
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+  max-width: 1440px;
+  background-color: var(--white);
+  color: var(--main-text-color);
+  position: relative;
+
+  --main-text-color: #121417;
+
+  --main-bg-color: #fbe9ba;
+  --main-color: #f4c550;
+}
+
+body.green-mode {
+  --main-bg-color: #cbded3;
+  --main-color: #9fbaae;
+}
+
+body.blue-mode {
+  --main-bg-color: #bfd6ea;
+  --main-color: #9fb7ce;
+}
+
+body.rose-mode {
+  --main-bg-color: #f2c0bd;
+  --main-color: #e0a39a;
+}
+
+body.peach-mode {
+  --main-bg-color: #f4c8ba;
+  --main-color: #f0aa8d;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
