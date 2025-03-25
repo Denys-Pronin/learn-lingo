@@ -16,26 +16,36 @@ body {
 
   --main-bg-color: #fbe9ba;
   --main-color: #f4c550;
+
+  --notebook-gradient: linear-gradient(180deg, #eeb055 0%, #d08f38 100%);
 }
 
 body.green-mode {
   --main-bg-color: #cbded3;
   --main-color: #9fbaae;
+
+  --notebook-gradient: linear-gradient(180deg, #295761 0%, #183e49 100%);
 }
 
 body.blue-mode {
   --main-bg-color: #bfd6ea;
   --main-color: #9fb7ce;
+
+  --notebook-gradient: linear-gradient(180deg, #314b6e 0%, #1f385a 100%);
 }
 
 body.rose-mode {
   --main-bg-color: #f2c0bd;
   --main-color: #e0a39a;
+
+  --notebook-gradient: linear-gradient(180deg, #b03f3e 0%, #982a27 100%);
 }
 
 body.peach-mode {
   --main-bg-color: #f4c8ba;
   --main-color: #f0aa8d;
+
+  --notebook-gradient: linear-gradient(180deg, #e17650 0%, #ca5b38 100%);
 }
 
 .visually-hidden {

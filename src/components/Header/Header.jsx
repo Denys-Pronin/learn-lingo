@@ -28,7 +28,7 @@ const Header = () => {
           </svg>
           <p className={s.login_text}>Log in</p>
         </div>
-        <MainButton text="Registration" />
+        <MainButton text="Registration" classNames="header" />
       </div>
     </header>
   );

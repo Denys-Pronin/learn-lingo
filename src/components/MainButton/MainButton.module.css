@@ -3,7 +3,7 @@
   background-color: var(--main-color);
   border: transparent;
 
-  padding: 14px 39px;
+  padding: 16px 88px;
 
   font-weight: 700;
   line-height: 20px;
@@ -13,4 +13,18 @@
 
 .btn:hover {
   background-color: var(--main-bg-color);
+}
+
+.header {
+  background-color: #121417;
+  color: var(--white);
+  padding: 14px 39px;
+}
+
+.header:hover {
+  background-color: #12141779;
+}
+
+.mt_64 {
+  margin-top: 64px;
 }
