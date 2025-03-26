@@ -5,7 +5,7 @@ import MainButton from "../MainButton/MainButton.jsx";
 const Header = () => {
   return (
     <header className="container">
-      <Link to="/home" className={s.logo}>
+      <Link to="/" className={s.logo}>
         <svg className={s.logo} width="28" height="28">
           <use href={`/icons/icons.svg#icon-logo`} />
         </svg>
@@ -14,7 +14,7 @@ const Header = () => {
       <nav className={s.nav}>
         <ul className={s.list}>
           <li className={s.nav_link}>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className={s.nav_link}>
             <Link to="/teachers">Teachers</Link>
