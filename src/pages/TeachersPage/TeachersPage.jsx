@@ -1,6 +1,6 @@
 import CardsList from "../../components/CardsList/CardsList.jsx";
 import Filter from "../../components/Filter/Filter.jsx";
-import s from "./TeachersPage.module.css";
+// import s from "./TeachersPage.module.css";
 
 const TeachersPage = () => {
   return (

@@ -28,3 +28,7 @@
 .mt_64 {
   margin-top: 64px;
 }
+.m_64auto {
+  display: block;
+  margin: 64px auto 64px auto;
+}

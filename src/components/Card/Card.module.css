@@ -133,6 +133,6 @@
   line-height: 16px;
 }
 
-.level_beginner {
+.level:first-child {
   background-color: var(--main-color);
 }
