@@ -1,3 +1,4 @@
+import Header from "../../components/Header/Header.jsx";
 import MainButton from "../../components/MainButton/MainButton.jsx";
 import s from "./HomePage.module.css";
 

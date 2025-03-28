@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import s from "./Card.module.css";
-import clsx from "clsx";
 const Card = ({ teacher }) => {
-  console.log(teacher);
-
   return (
     <div className={s.card}>
       <img className={s.img} src={teacher.avatar_url} alt="avatar" />
