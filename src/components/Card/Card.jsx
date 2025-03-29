@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
 import s from "./Card.module.css";
+import { useState } from "react";
+import MainButton from "../MainButton/MainButton.jsx";
 const Card = ({ teacher }) => {
+  const [isMore, setIsMore] = useState(false);
+
   return (
     <div className={s.card}>
       <img className={s.img} src={teacher.avatar_url} alt="avatar" />
@@ -45,12 +48,56 @@ const Card = ({ teacher }) => {
         <p className={s.conditions}>
           <span>Conditions:</span> {teacher.conditions.join(" ")}
         </p>
-        <Link className={s.more}>Read more</Link>
+        {isMore ? (
+          <>
+            <div className={s.descr}>
+              Jane is an experienced and dedicated language teacher specializing
+              in German and French. She holds a Bachelor's degree in German
+              Studies and a Master's degree in French Literature. Her passion
+              for languages and teaching has driven her to become a highly
+              proficient and knowledgeable instructor. With over 10 years of
+              teaching experience, Jane has helped numerous students of various
+              backgrounds and proficiency levels achieve their language learning
+              goals. She is skilled at adapting her teaching methods to suit the
+              needs and learning styles of her students, ensuring that they feel
+              supported and motivated throughout their language journey.
+            </div>
+
+            <ul className={s.reviews}>
+              {teacher.reviews.map((review, i) => {
+                return (
+                  <li className={s.review} key={i}>
+                    <div className={s.review_wrapper}>
+                      <p className={s.review_name}>{review.reviewer_name}</p>
+
+                      <p className={s.review_rating}>
+                        <svg className={s.star} width="16" height="16">
+                          <use href={`/icons/icons.svg#icon-star`} />
+                        </svg>
+                        {review.reviewer_rating}
+                      </p>
+                    </div>
+                    <p className={s.review_comment}>{review.comment}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </>
+        ) : (
+          <button
+            onClick={() => setIsMore(true)}
+            type="button"
+            className={s.more}
+          >
+            Read more
+          </button>
+        )}
         <ul className={s.levels}>
           {teacher.levels.map((level) => {
             return <li className={s.level}>{level}</li>;
           })}
         </ul>
+        {isMore && <MainButton text="Book trial lesson" classNames="mt_32" />}
       </div>
     </div>
   );

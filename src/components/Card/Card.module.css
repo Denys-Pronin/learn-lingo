@@ -116,6 +116,9 @@
   text-decoration: underline;
   margin-top: 16px;
   display: block;
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
 }
 
 .levels {
@@ -135,4 +138,40 @@
 
 .level:first-child {
   background-color: var(--main-color);
+}
+
+.descr {
+  margin-top: 16px;
+}
+
+.review {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review_wrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.review_name {
+  color: #8a8a89;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.review_rating {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.review_comment {
+  font-weight: 500;
+  line-height: 24px;
 }
