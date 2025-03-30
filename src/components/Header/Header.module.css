@@ -45,4 +45,6 @@ header {
 .login_text {
   font-weight: 700;
   line-height: 20px;
+  border: transparent;
+  background-color: transparent;
 }

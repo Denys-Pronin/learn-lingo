@@ -8,6 +8,13 @@ import {
   ref,
   startAfter,
 } from "firebase/database";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCro8IJ8R4pyyJMT9O4EyYKAVyIx7FGOx4",
@@ -21,7 +28,52 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const database = getDatabase(app);
+
+export const loginUser = async (email, password) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    return userCredential.user;
+  } catch (error) {
+    console.error("Registration error:", error.message);
+    throw error;
+  }
+};
+
+export const registerUser = async (email, password) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    return userCredential.user;
+  } catch (error) {
+    console.error("Login error:", error.message);
+    throw error;
+  }
+};
+
+export const logoutUser = async () => {
+  try {
+    await signOut(auth);
+    console.log("Logout");
+  } catch (error) {
+    console.error("Logout error:", error.message);
+    throw error;
+  }
+};
+
+export const checkAuthState = (callback) => {
+  onAuthStateChanged(auth, (user) => {
+    callback(user);
+  });
+};
 
 export const getTeachers = async (lastKey = null) => {
   const dbQuery = lastKey

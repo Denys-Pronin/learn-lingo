@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import s from "./Header.module.css";
 import MainButton from "../MainButton/MainButton.jsx";
+import { logoutUser } from "../../firebase.js";
 
-const Header = () => {
+const Header = ({ showLoginForm, showRefisterForm, user, setUser }) => {
+  const logout = () => {
+    logoutUser;
+    localStorage.removeItem("user");
+    setUser(null);
+  };
+
   return (
     <header className="container">
       <Link to="/" className={s.logo}>
@@ -21,15 +28,31 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className={s.login}>
-        <div className={s.login_wrapper}>
-          <svg className={s.login_icon} width="20" height="20">
-            <use href={`/icons/icons.svg#icon-login`} />
-          </svg>
-          <p className={s.login_text}>Log in</p>
+      {user ? (
+        <div className={s.logout}>
+          <div className={s.login_wrapper}>
+            <button onClick={logout} className={s.login_text}>
+              Log out
+            </button>
+          </div>
         </div>
-        <MainButton text="Registration" classNames="header" />
-      </div>
+      ) : (
+        <div className={s.login}>
+          <div className={s.login_wrapper}>
+            <svg className={s.login_icon} width="20" height="20">
+              <use href={`/icons/icons.svg#icon-login`} />
+            </svg>
+            <button onClick={showLoginForm} className={s.login_text}>
+              Log in
+            </button>
+          </div>
+          <MainButton
+            text="Registration"
+            classNames="header"
+            click={showRefisterForm}
+          />
+        </div>
+      )}
     </header>
   );
 };
