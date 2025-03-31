@@ -10,6 +10,20 @@ function App() {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
   const [isRegisterVisible, setIsRegisterVisible] = useState(false);
   const [user, setUser] = useState(localStorage.getItem("user"));
+  const [favorites, setFavorites] = useState(
+    JSON.parse(localStorage.getItem("favorites")) || []
+  );
+
+  const toggleFavorite = (teacherId) => {
+    let updatedFavorites;
+    if (favorites.includes(teacherId)) {
+      updatedFavorites = favorites.filter((id) => id !== teacherId);
+    } else {
+      updatedFavorites = [...favorites, teacherId];
+    }
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
   useEffect(() => {
     const handleStorageChange = () => {
@@ -42,7 +56,15 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/teachers" element={<TeachersPage />} />
+        <Route
+          path="/teachers"
+          element={
+            <TeachersPage
+              favorites={favorites}
+              toggleFavorite={toggleFavorite}
+            />
+          }
+        />
       </Routes>
 
       <LoginForm

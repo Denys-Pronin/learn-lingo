@@ -4,7 +4,7 @@ import s from "./CardsList.module.css";
 import { getTeachers } from "../../firebase.js";
 import MainButton from "../MainButton/MainButton.jsx";
 
-const CardsList = ({ filters }) => {
+const CardsList = ({ filters, toggleFavorite, favorites }) => {
   const [teachers, setTeachers] = useState([]);
   const [lastKey, setLastKey] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -46,7 +46,11 @@ const CardsList = ({ filters }) => {
         {filteredTeachers.map((teacher, i) => {
           return (
             <li key={i}>
-              <Card teacher={teacher} />
+              <Card
+                favorites={favorites}
+                toggleFavorite={toggleFavorite}
+                teacher={teacher}
+              />
             </li>
           );
         })}
