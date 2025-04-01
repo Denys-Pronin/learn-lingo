@@ -179,3 +179,20 @@
 .heart_active {
   fill: red;
 }
+
+@media screen and (max-width: 1000px) {
+  .header {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .lang {
+    margin: 0;
+  }
+  .stats {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .levels {
+    flex-wrap: wrap;
+  }
+}

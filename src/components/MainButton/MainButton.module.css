@@ -3,7 +3,9 @@
   background-color: var(--main-color);
   border: transparent;
 
-  padding: 16px 88px;
+  padding: 16px 40px;
+  margin: 0 auto;
+  display: block;
 
   font-weight: 700;
   line-height: 20px;

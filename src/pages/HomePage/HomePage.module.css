@@ -108,3 +108,42 @@
   line-height: 18px;
   letter-spacing: -0.28px;
 }
+@media screen and (max-width: 1280px) {
+  .img_wrapper {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .stats {
+    width: 90%;
+    margin: 24px auto 0;
+  }
+  .stats_list {
+    display: flex;
+    gap: 0;
+    justify-content: space-around;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .wrapper {
+    padding-top: 20px;
+  }
+  .title {
+    font-size: 32px;
+    text-align: center;
+  }
+  .stats_list {
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+}

@@ -48,3 +48,19 @@ header {
   border: transparent;
   background-color: transparent;
 }
+
+@media screen and (max-width: 568px) {
+  .list {
+    display: none;
+  }
+  .header {
+    padding: 20px;
+  }
+  .login_icon {
+    display: none;
+  }
+  .header {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

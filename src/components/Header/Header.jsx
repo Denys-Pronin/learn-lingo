@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import s from "./Header.module.css";
 import MainButton from "../MainButton/MainButton.jsx";
 import { logoutUser } from "../../firebase.js";
+import clsx from "clsx";
 
 const Header = ({ showLoginForm, showRefisterForm, user, setUser }) => {
   const logout = () => {
@@ -11,7 +12,7 @@ const Header = ({ showLoginForm, showRefisterForm, user, setUser }) => {
   };
 
   return (
-    <header className="container">
+    <header className={clsx("container", s.header)}>
       <Link to="/" className={s.logo}>
         <svg className={s.logo} width="28" height="28">
           <use href={`/icons/icons.svg#icon-logo`} />

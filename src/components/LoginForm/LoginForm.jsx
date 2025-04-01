@@ -3,8 +3,10 @@ import s from "./LoginForm.module.css";
 import { useState } from "react";
 import clsx from "clsx";
 import { loginUser } from "../../firebase.js";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ isLoginVisible, closeLoginForm, setUser }) => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -22,6 +24,7 @@ const LoginForm = ({ isLoginVisible, closeLoginForm, setUser }) => {
       JSON.stringify({ uid: user.uid, email: user.email })
     );
     setUser({ uid: user.uid, email: user.email });
+    navigate("/teachers");
     closeLoginForm();
     reset();
   };
